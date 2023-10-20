@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { visual1, visual2, visual3 } from "./assets/img";
-import { project1, project2, project3 } from "./assets/img";
+import { project1, project2, lend, project3, temi2 } from "./assets/img";
 
 
 export const DATA = [
@@ -32,22 +32,52 @@ export const DATA = [
 
 export const PROJECTS = [
   {
-    title:"Sport",
+    title:"Portfolio",
+    image:temi2,
+    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
+    stacks: "React, TypeScript, Material UI",
+    buttonText:"Live",
+    buttonText2:"Source",
+    buttonLink:"Live",
+    buttonLink2:"https://github.com/Temitopefa/Temi-Portfolio",
+  },
+  {
+    title:"LendSqr",
+    image:lend,
+    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
+    stacks: "React, TypeScript, Material UI",
+    buttonText:"Live",
+    buttonText2:"Source",
+    buttonLink:"https://temitope-faluta-lendsqr-fe-test.netlify.app/",
+    buttonLink2:"https://github.com/lasbohoo/lendsqr-fe-test",
+  },
+  {
+    title:"Clothing",
     image:project1,
     description: "To create the contact form, in the contact form component you have to open the ContactForm.",
     stacks: "React, TypeScript, Material UI",
     buttonText:"Live",
-    buttonText2:"Repo",
+    buttonText2:"Source",
     buttonLink:"Live",
     buttonLink2:"Repo",
   },
   {
-    title:"School",
+    title:"Clothing",
+    image:project3,
+    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
+    stacks: "React, TypeScript, Material UI",
+    buttonText:"Live",
+    buttonText2:"Source",
+    buttonLink:"Live",
+    buttonLink2:"Repo",
+  },
+  {
+    title:"Clothing",
     image:project2,
     description: "To create the contact form, in the contact form component you have to open the ContactForm.",
     stacks: "React, TypeScript, Material UI",
     buttonText:"Live",
-    buttonText2:"Repo",
+    buttonText2:"Source",
     buttonLink:"Live",
     buttonLink2:"Repo",
   },
@@ -57,37 +87,7 @@ export const PROJECTS = [
     description: "To create the contact form, in the contact form component you have to open the ContactForm.",
     stacks: "React, TypeScript, Material UI",
     buttonText:"Live",
-    buttonText2:"Repo",
-    buttonLink:"Live",
-    buttonLink2:"Repo",
-  },
-  {
-    title:"Clothing",
-    image:project3,
-    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
-    stacks: "React, TypeScript, Material UI",
-    buttonText:"Live",
-    buttonText2:"Repo",
-    buttonLink:"Live",
-    buttonLink2:"Repo",
-  },
-  {
-    title:"Clothing",
-    image:project3,
-    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
-    stacks: "React, TypeScript, Material UI",
-    buttonText:"Live",
-    buttonText2:"Repo",
-    buttonLink:"Live",
-    buttonLink2:"Repo",
-  },
-  {
-    title:"Clothing",
-    image:project3,
-    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
-    stacks: "React, TypeScript, Material UI",
-    buttonText:"Live",
-    buttonText2:"Repo",
+    buttonText2:"Source",
     buttonLink:"Live",
     buttonLink2:"Repo",
   },

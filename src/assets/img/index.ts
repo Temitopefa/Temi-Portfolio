@@ -15,6 +15,8 @@ import project3 from "./project3.jpg";
 import whatsapp from "./whatsapp.svg";
 import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
+import temi2 from "./temi2.png";
+import lend from "./lend.png";
 import resume from "./temitopeFaluta.pdf";
 
 export {
@@ -36,4 +38,6 @@ export {
   linkedin,
   twitter,
   resume,
+  temi2,
+  lend,
 };

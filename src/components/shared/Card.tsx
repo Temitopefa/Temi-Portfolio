@@ -59,7 +59,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     },
     image: {
         width: "100%",
-        height: "auto",
+        height: "500px",
         marginBottom: theme.spacing(2),
         borderRadius: theme.spacing(1),
     },
