@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from "@mui/styles";
-import { Stack, Theme, Typography, Button } from "@mui/material";
+import { Stack, Theme, Typography, Button, Link } from "@mui/material";
 
 interface CardType {
     title?: string;
@@ -32,12 +32,16 @@ const Card: React.FC<CardType> = ({ title, image, className, description, onClic
                         {stacks}
                     </Typography>
                     <div className={classes.buttons}>
-                        <Button variant="contained" color="primary" href={buttonLink} onClick={onClick}>
-                            {buttonText}
-                        </Button>
-                        <Button variant="contained" color="secondary" href={buttonLink2} onClick={onClick}>
-                            {buttonText2}
-                        </Button>
+                        <Link target='_blank'>
+                            <Button variant="contained" color="primary" href={buttonLink} onClick={onClick}>
+                                {buttonText}
+                            </Button>
+                        </Link>
+                        <Link target='_blank'>
+                            <Button variant="contained" color="secondary" href={buttonLink2} onClick={onClick}>
+                                {buttonText2}
+                            </Button>
+                        </Link>  
                     </div>
                 </div>
             </div>

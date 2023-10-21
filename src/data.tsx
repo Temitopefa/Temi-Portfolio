@@ -38,7 +38,7 @@ export const PROJECTS = [
     stacks: "React, TypeScript, Material UI",
     buttonText:"Live",
     buttonText2:"Source",
-    buttonLink:"Live",
+    buttonLink:"https://temi-portfolio.vercel.app",
     buttonLink2:"https://github.com/Temitopefa/Temi-Portfolio",
   },
   {

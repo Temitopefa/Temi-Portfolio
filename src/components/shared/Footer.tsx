@@ -52,11 +52,11 @@ const useStyles = makeStyles((theme: Theme) => ({
     padding: "4rem",
     [theme.breakpoints.down("sm")]: {
       display:"flex",
+      width: "100%",
       flexDirection: "column-reverse",
       marginTop: "4rem",
       height: "auto",
       padding: "2rem",
-      width:"max-content",
       gap:"2rem",
     },
   },
@@ -69,9 +69,13 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 600,
     lineHeight: "36px",
     letterSpacing: "-0.5px",
+    gap:"5px",
     [theme.breakpoints.down("sm")]: {
       marginBottom: "1rem",
       textAlign: "center",
+      fontSize:"15px !important",
+      display: "flex",
+      gap:"3px",
     },
   },
   social:{

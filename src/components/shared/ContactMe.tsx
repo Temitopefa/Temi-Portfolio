@@ -1,13 +1,12 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@mui/styles";
-import { Theme, Box, Typography, Button } from "@mui/material";
-import { envilope } from "../../assets/img";
+import { Theme, Box, Typography } from "@mui/material";
 import ContactForm from "./ContactForm";
-
+import { BsEnvelopeAt } from "react-icons/bs";
 
 const ContactMe: React.FC = () => {
   const classes = useStyles();
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   return (
     <Box className={classes.root} id="contact">
@@ -19,24 +18,12 @@ const ContactMe: React.FC = () => {
         I’m currently available for freelance work
       </Typography>
 
-      <Button variant="contained" className={classes.btn} onClick={() => setOpen(true)}>
-        <img
-          src={envilope}
-          alt="envilope"
-          style={{ width: "20px", height: "16px " }}
+      <button className={classes.btn} onClick={() => setOpen(true)}>
+        <BsEnvelopeAt
+          style={{ width: "20px", height: "16px", color: "#959595 !important" }}
         />
-        <p
-          style={{
-            fontSize: "18px",
-            fontStyle: "normal",
-            fontWeight: 600,
-            lineHeight: "normal",
-            textTransform:"lowercase"
-          }}
-        >
-          temitopefaluta@gmail.com
-        </p>
-      </Button>
+        <p className={classes.p}>temitopefaluta@gmail.com</p>
+      </button>
       {open && <ContactForm setOpen={setOpen} />}
     </Box>
   );
@@ -67,8 +54,8 @@ const useStyles = makeStyles((theme: Theme) => ({
       fontSize: "24px",
     },
   },
-  text:{
-    color: '#959595',
+  text: {
+    color: "#959595",
     textAlign: "center",
     fontFamily: "Manrope",
     fontSize: "24px",
@@ -84,26 +71,39 @@ const useStyles = makeStyles((theme: Theme) => ({
     height: "64px",
     padding: "16px 48px",
     justifyContent: "center",
+    display: "flex",
     alignItems: "center",
     gap: "16px",
-    borderRadius: "4px",
-    animation: "$fadeIn 0.5s ease-in-out",
-    transition: "transform background-color opacity 0.3s ease-in-out",
+    border: "0px solid",
+    outline: "2px solid",
+    color: "#959595",
+    outlineColor: "#959595",
+    outlineOffset: "0px",
+    textShadow: "none",
+    cursor: "pointer",
+    position: "relative",
+    textDecoration: "none",
+    backgroundColor: "#202020",
+    transition: "all 550ms cubic-bezier(.36,.63,.5,.73)",
     "&:hover": {
-      transform: "scale(1.2)",
-      backgroundColor: "#7D7D7D !important", 
+      border: "2px solid #FF9950",
+      outlineColor: "#202020",
+      outlineOffset: "15px",
+      color: "#FF9950",
     },
-    backgroundColor: "#9D9D9D !important",
     [theme.breakpoints.down("sm")]: {
-      width: "auto",
+      display: "flex",
+      width: "350px",
     },
   },
-  "@keyframes fadeIn": {
-    from: {
-      opacity: 0, 
-    },
-    to: {
-      opacity: 1, 
+  p: {
+    fontSize: "18px",
+    fontStyle: "normal",
+    fontWeight: 600,
+    lineHeight: "normal",
+    textTransform: "lowercase",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "15px",
     },
   },
 }));
