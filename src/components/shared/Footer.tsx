@@ -69,7 +69,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 600,
     lineHeight: "36px",
     letterSpacing: "-0.5px",
-    gap:"5px",
+    gap:"4px",
     [theme.breakpoints.down("sm")]: {
       marginBottom: "1rem",
       textAlign: "center",
