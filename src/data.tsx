@@ -52,14 +52,14 @@ export const PROJECTS = [
     buttonLink2:"https://github.com/lasbohoo/lendsqr-fe-test",
   },
   {
-    title:"Clothing",
+    title:"Travel Agency",
     image:project1,
     description: "To create the contact form, in the contact form component you have to open the ContactForm.",
-    stacks: "React, TypeScript, Material UI",
+    stacks: "React, TypeScript, Tailwind Css",
     buttonText:"Live",
     buttonText2:"Source",
-    buttonLink:"Live",
-    buttonLink2:"Repo",
+    buttonLink:"https://travel-agency-red.vercel.app/",
+    buttonLink2:"https://github.com/Temitopefa/Travel-Agency",
   },
   {
     title:"Clothing",
