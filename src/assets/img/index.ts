@@ -17,7 +17,7 @@ import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import temi2 from "./temi2.png";
 import lend from "./lend.png";
-import travel from "./travel.png";
+import travel from "./travel.jpg";
 import resume from "./temitopeFaluta.pdf";
 
 export {
