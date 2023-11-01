@@ -1,5 +1,5 @@
 /* eslint-disable react-refresh/only-export-components */
-import { visual1, visual2, visual3 } from "./assets/img";
+import { travel, visual1, visual2, visual3 } from "./assets/img";
 import { project1, project2, lend, project3, temi2 } from "./assets/img";
 
 
@@ -42,6 +42,16 @@ export const PROJECTS = [
     buttonLink2:"https://github.com/Temitopefa/Temi-Portfolio",
   },
   {
+    title:"Travel Agency",
+    image:travel,
+    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
+    stacks: "React, TypeScript, Tailwind Css",
+    buttonText:"Live",
+    buttonText2:"Source",
+    buttonLink:"https://travel-agency-red.vercel.app/",
+    buttonLink2:"https://github.com/Temitopefa/Travel-Agency",
+  },
+  {
     title:"LendSqr",
     image:lend,
     description: "To create the contact form, in the contact form component you have to open the ContactForm.",
@@ -52,18 +62,8 @@ export const PROJECTS = [
     buttonLink2:"https://github.com/lasbohoo/lendsqr-fe-test",
   },
   {
-    title:"Travel Agency",
-    image:project1,
-    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
-    stacks: "React, TypeScript, Tailwind Css",
-    buttonText:"Live",
-    buttonText2:"Source",
-    buttonLink:"https://travel-agency-red.vercel.app/",
-    buttonLink2:"https://github.com/Temitopefa/Travel-Agency",
-  },
-  {
     title:"Clothing",
-    image:project3,
+    image:project1,
     description: "To create the contact form, in the contact form component you have to open the ContactForm.",
     stacks: "React, TypeScript, Material UI",
     buttonText:"Live",
