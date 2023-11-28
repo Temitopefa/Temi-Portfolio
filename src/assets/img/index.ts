@@ -17,6 +17,7 @@ import linkedin from "./linkedin.svg";
 import twitter from "./twitter.svg";
 import temi2 from "./temi2.png";
 import lend from "./lend.png";
+import shopify from "./shopify.jpg";
 import travel from "./travel.jpg";
 import resume from "./temitopeFaluta.pdf";
 
@@ -42,4 +43,5 @@ export {
   temi2,
   lend,
   travel,
+  shopify,
 };
