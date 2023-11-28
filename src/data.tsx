@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { travel, visual1, visual2, visual3 } from "./assets/img";
-import { project1, project2, lend, project3, temi2, shopify } from "./assets/img";
+import { project2, lend, project3, temi2, shopify } from "./assets/img";
 
 
 export const DATA = [
