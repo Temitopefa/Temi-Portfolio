@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { travel, visual1, visual2, visual3 } from "./assets/img";
-import { project2, lend, project3, temi2, shopify } from "./assets/img";
+import { comfy, lend, project3, temi2, shopify } from "./assets/img";
 
 
 export const DATA = [
@@ -42,6 +42,16 @@ export const PROJECTS = [
     buttonLink2:"https://github.com/Temitopefa/Temi-Portfolio",
   },
   {
+    title:"Comfy Store",
+    image: comfy,
+    description: "Welcome to Comfy Store, your one-stop online shop for premium and exquisite home furniture and decor. We are thrilled to present a thoughtfully curated collection that combines comfort, style, and functionality to elevate your living spaces.",
+    stacks: "React, TypeScript, Redux, tailwind",
+    buttonText:"Live",
+    buttonText2:"Source",
+    buttonLink:"https://comfy-store-pi.vercel.app",
+    buttonLink2:"https://github.com/Temitopefa/ComfyStore.git",
+  },
+  {
     title:"Shopify Admin",
     image:shopify,
     description: "Shopify is a user-friendly e-commerce platform. As a business, they strive to provide great user experiences to all their users, including keyboard-only users, visually impaired users.",
@@ -70,16 +80,6 @@ export const PROJECTS = [
     buttonText2:"Source",
     buttonLink:"https://temitope-faluta-lendsqr-fe-test.netlify.app/",
     buttonLink2:"https://github.com/lasbohoo/lendsqr-fe-test",
-  },
-  {
-    title:"Clothing",
-    image:project2,
-    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
-    stacks: "React, TypeScript, Material UI",
-    buttonText:"Live",
-    buttonText2:"Source",
-    buttonLink:"Live",
-    buttonLink2:"Repo",
   },
   {
     title:"Clothing",

@@ -19,6 +19,7 @@ import temi2 from "./temi2.png";
 import lend from "./lend.png";
 import shopify from "./shopify.jpg";
 import travel from "./travel.jpg";
+import comfy from "./comfy.jpg";
 import resume from "./temitopeFaluta.pdf";
 
 export {
@@ -44,4 +45,5 @@ export {
   lend,
   travel,
   shopify,
+  comfy,
 };
