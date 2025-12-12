@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
            <span style={{ color: "#ECECEC" }}>
             Temitope Faluta
           </span>
-          -Copyright 2023
+          -Copyright {new Date().getFullYear()}
         </Typography>
       </Stack>
       <Stack direction="row" className={classes.social}>
