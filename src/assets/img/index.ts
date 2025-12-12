@@ -23,7 +23,7 @@ import comfy from "./comfy.jpg";
 import resume from "./temitopeFaluta.pdf";
 import dashboardPage from "./dashboardPage.png";
 import ican from "./iotPage.png";
-import loginPage from "./login page.png";
+import loginPage from "./Login page.png";
 import iotDashboard from "./iot dashboard.png";
 
 export {
