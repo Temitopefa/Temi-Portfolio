@@ -56,7 +56,7 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 700,
     lineHeight: "normal",
     letterSpacing: "-0.5px",
-    marginBottom: "4rem",
+    marginBottom: "8rem",
     [theme.breakpoints.down("sm")]: {
       fontSize: "28px",
       marginBottom: "2rem",
@@ -64,6 +64,7 @@ const useStyles = makeStyles((theme: Theme) => ({
   },
   grid: {
     display: "grid",
+    marginTop: "2rem",
     gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
     gap: "2rem",
     justifyContent: "center",
