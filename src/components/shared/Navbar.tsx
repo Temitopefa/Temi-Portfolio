@@ -30,7 +30,7 @@ const LINKS = [
 
 const SOCIAL = [
   { icon: <FaGithub />, to:"https://github.com/Temitopefa"},
-  { icon: <FaTwitter />, to:"https://twitter.com/Faluta5"},
+  { icon: <FaTwitter />, to:"https://x.com/temitope_faluta?s=21"},
   { icon: <FaLinkedin />, to:"/https://www.linkedin.com/in/temitope-faluta-255527166/"},
   { icon: <FaWhatsapp />, to:"https://wa.link/2lqmjq"},
 ];

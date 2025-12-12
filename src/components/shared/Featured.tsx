@@ -1,25 +1,41 @@
+
+
 import React from "react";
-import { arrow1, sample1, sample2, sample3, zummit1 } from "../../assets/img";
+import { arrow1, loginPage, sample1, iotDashboard, zummit1 } from "../../assets/img";
 import { makeStyles } from "@mui/styles";
-import { Stack, Theme, Box } from "@mui/material";
+import { Stack, Theme, Box, Typography } from "@mui/material";
 import { NavHashLink } from 'react-router-hash-link';
+
+const FEATURED_PROJECTS = [
+  { id: 1, image: loginPage, title: "Login Page Overlay", description: "Authentication Interface" },
+  { id: 2, image: sample1, title: "Dashboard UI", description: "User Analytics Dashboard" },
+  { id: 3, image: zummit1, title: "Zummit Africa", description: "Corporate Website" },
+  { id: 4, image: iotDashboard, title: "IoT Dashboard", description: "IoT Dashboard" },
+];
 
 const Featured: React.FC = () => {
   const classes = useStyles();
+  
   return (
     <Box className={classes.root}>
-      <NavHashLink to="/#work">
-        <Stack direction="row" className={classes.arrow}>
-          <img src={arrow1} alt="arrow1" />
-          <p className={classes.featured}>Projects</p> 
+      <NavHashLink to="/#work" style={{ textDecoration: 'none' }}>
+        <Stack direction="row" className={classes.header}>
+          <img src={arrow1} alt="arrow" className={classes.arrowIcon} />
+          <Typography className={classes.sectionTitle}>Featured Projects</Typography> 
         </Stack>
       </NavHashLink> 
-      <Stack direction="row" className={classes.wrapImg1} id="feature">
-        <img src={sample3} alt="sample3" className={classes.img1} />
-        <img src={sample1} alt="sample1" className={classes.img2} />
-        <img src={zummit1} alt="zummit1" className={classes.img3} />
-        <img src={sample2} alt="sample2" className={classes.img4} />
-      </Stack>
+      
+      <div className={classes.gridContainer} id="feature">
+        {FEATURED_PROJECTS.map((project) => (
+          <div key={project.id} className={classes.projectCard}>
+            <img src={project.image} alt={project.title} className={classes.projectImage} />
+            <div className={classes.overlay}>
+              <Typography variant="h5" className={classes.projectTitle}>{project.title}</Typography>
+              <Typography variant="body2" className={classes.projectDesc}>{project.description}</Typography>
+            </div>
+          </div>
+        ))}
+      </div>
     </Box>
   );
 };
@@ -27,136 +43,108 @@ const Featured: React.FC = () => {
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
     width: "100%",
+    padding: "4rem 0",
+    maxWidth: "1280px",
+    margin: "0 auto",
   },
-  arrow: {
+  header: {
     display: "flex",
     alignItems: "center",
-    gap: "32px",
+    gap: "1.5rem",
+    marginBottom: "3rem",
     cursor: "pointer",
-    marginLeft:"7rem",
+    paddingLeft: "7rem",
     [theme.breakpoints.down("md")]: { 
-      marginLeft: "3rem",
+      paddingLeft: "3rem",
     },
     [theme.breakpoints.down("sm")]: { 
-      marginLeft: "1rem",
+      paddingLeft: "1.5rem",
     },
   },
-  featured: {
+  arrowIcon: {
+    transition: "transform 0.3s ease",
+    "&:hover": {
+        transform: "translateX(5px)",
+    }
+  },
+  sectionTitle: {
     color: "#DEDEDE",
-    fontSize: "16px",
-    fontStyle: "normal",
-    fontWeight: 700,
-    lineHeight: "16px",
-    letterSpacing: "1.5px",
+    fontSize: "16px !important",
+    fontWeight: "700 !important",
+    letterSpacing: "1.5px !important",
     textTransform: "uppercase",
+    fontFamily: "Manrope !important",
   },
-  wrapImg1: {
-    display: "flex",
-    flexWrap: "wrap",
-    justifyContent: "center",
-    alignItems: "center",
+  gridContainer: {
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)",
     gap: "2rem",
-    padding: "1rem",
-    flexShrink: 0,
-    animation: "$slideIn 3s ease-out forwards",
-  },
-  "@keyframes slideIn": {
-    "0%": {
-      transform: "translateY(100%)",
-    },
-    "100%": {
-      transform: "translateY(0)", 
-    },
-  },
-  img1: {
-    maxWidth: "612px",
-    height: "888px",
-    backgroundSize: "contain",
-    backgroundRepeat: "no-repeat",
-    flex: 1,
-    borderRadius: "4px",
-    cursor: "pointer",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)", 
-    transition: "transform 0.3s ease-in-out", 
-    "&:hover": {
-      transform: "scale(1.05)", 
-    },
+    padding: "0 7rem",
+    animation: "$fadeIn 1s ease-out forwards",
     [theme.breakpoints.down("md")]: {
-      maxWidth: "400px",
-      height: "600px",
+      gridTemplateColumns: "1fr",
+      padding: "0 3rem",
     },
     [theme.breakpoints.down("sm")]: {
-      maxWidth: "100%",
+      padding: "0 1.5rem",
     },
   },
-  img2: {
-    maxWidth: "612px",
-    height: "888px",
-    backgroundSize: "contain",
-    backgroundRepeat: "no-repeat",
-    marginTop: "10rem",
-    borderRadius: "4px",
-    cursor: "pointer",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)", 
-    transition: "transform 0.3s ease-in-out", 
-    "&:hover": {
-      transform: "scale(1.05)",
-    },
-    [theme.breakpoints.down("md")]: {
-      maxWidth: "400px",
-      height: "600px",
-      marginTop: "auto",
-    },
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "100%", 
-      height: "auto",
-      marginTop: "auto",
-    },
+  "@keyframes fadeIn": {
+    "0%": { opacity: 0, transform: "translateY(20px)" },
+    "100%": { opacity: 1, transform: "translateY(0)" },
   },
-  img3: {
-    maxWidth: "612px",
-    height: "888px",
-    backgroundSize: "contain",
-    backgroundRepeat: "no-repeat",
-    marginTop: "-10rem",
-    borderRadius: "4px",
+  projectCard: {
+    position: "relative",
+    borderRadius: "12px",
+    overflow: "hidden",
+    height: "500px",
     cursor: "pointer",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)", 
-    transition: "transform 0.3s ease-in-out", 
+    boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+    transition: "transform 0.3s ease, box-shadow 0.3s ease",
     "&:hover": {
-      transform: "scale(1.05)", 
-    },
-    [theme.breakpoints.down("md")]: {
-      maxWidth: "400px",
-      height: "600px",
-      marginTop: "1rem",
+      transform: "translateY(-5px)",
+      boxShadow: "0 20px 40px rgba(0,0,0,0.5)",
+      "& $overlay": {
+        opacity: 1,
+      },
+      "& $projectImage": {
+        transform: "scale(1.05)",
+      },
     },
     [theme.breakpoints.down("sm")]: {
-      maxWidth: "100%", 
-      height: "400px",
-      marginTop: "1rem",
-    },
+        height: "350px",
+    }
   },
-  img4: {
-    maxWidth: "612px",
-    height: "888px",
-    backgroundSize: "contain",
-    backgroundRepeat: "no-repeat",
-    borderRadius: "4px",
-    cursor: "pointer",
-    boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.25)",
-    transition: "transform 0.3s ease-in-out", 
-    "&:hover": {
-      transform: "scale(1.05)", 
-    },
-    [theme.breakpoints.down("md")]: {
-      maxWidth: "400px",
-      height: "600px",
-    },
-    [theme.breakpoints.down("sm")]: {
-      maxWidth: "100%", 
-      height: "auto",
-    },
+  projectImage: {
+    width: "100%",
+    height: "100%",
+    objectFit: "cover",
+    transition: "transform 0.5s ease",
+  },
+  overlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    background: "linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.1) 100%)",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    padding: "2rem",
+    opacity: 0,
+    transition: "opacity 0.3s ease",
+  },
+  projectTitle: {
+    color: "#fff",
+    fontWeight: "700 !important",
+    marginBottom: "0.5rem !important",
+    fontFamily: "Manrope !important",
+    transform: "translateY(0)",
+  },
+  projectDesc: {
+    color: "#ccc",
+    fontFamily: "Manrope !important",
   },
 }));
 

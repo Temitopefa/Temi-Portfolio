@@ -64,7 +64,7 @@ const Project: React.FC = () => {
       <div className={classes.wrapper}>
         <Slider {...settings}>
           {PROJECTS.map((project, index) => (
-            <div key={index}>
+            <div key={index} style={{ height: "100%" }}>
               <Card {...project} buttonLink={project.buttonLink} buttonLink2={project.buttonLink2}  />
             </div>
           ))}
@@ -113,11 +113,30 @@ const useStyles = makeStyles(() => ({
   },
   "@global": {
     ".slick-dots li button:before": {
-      color: "#ff0000",
+      color: "#B0B0B0", // Light grey for inactive
       fontSize: "12px",
+      opacity: 0.5,
+      transition: "opacity 0.3s ease, color 0.3s ease",
     },
     ".slick-dots li.slick-active button:before": {
-      color: "#00ff00", 
+      color: "#4FD1C5", // Accent color for active
+      opacity: 1,
+    },
+    // Force flexbox layout for slick-slider to make all slides equal height
+    ".slick-track": {
+      display: "flex !important",
+      gap: "0px", // Gap handled by Card margin
+    },
+    ".slick-slide": {
+      height: "inherit !important",
+      display: "flex !important",
+      paddingBottom: "2rem", // Space for shadow/hover effect
+    },
+    ".slick-slide > div": {
+      width: "100%",
+      display: "flex",
+      flexDirection: "column",
+      height: "100%", 
     },
   },
 }));

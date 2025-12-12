@@ -1,78 +1,41 @@
-import React, { useState } from "react";
+import React from "react";
 import { makeStyles } from "@mui/styles";
-import { Stack, Theme, Box, Typography } from "@mui/material";
-import { DATA } from "../../data";
-import Model from "./Model";
+import { Theme, Box, Typography, Paper } from "@mui/material";
+import { FaReact, FaNodeJs, FaGitAlt, FaFigma, FaHtml5, FaCss3Alt } from "react-icons/fa";
+import { SiTypescript, SiJavascript, SiNextdotjs, SiTailwindcss, SiMui, SiRedux, SiMongodb } from "react-icons/si";
+
+const SKILLS = [
+  { name: "React", icon: <FaReact color="#61DAFB" /> },
+  { name: "TypeScript", icon: <SiTypescript color="#3178C6" /> },
+  { name: "Next.js", icon: <SiNextdotjs color="#ffffff" /> },
+  { name: "JavaScript", icon: <SiJavascript color="#F7DF1E" /> },
+  { name: "Redux", icon: <SiRedux color="#764ABC" /> },
+  { name: "Tailwind CSS", icon: <SiTailwindcss color="#06B6D4" /> },
+  { name: "Material UI", icon: <SiMui color="#0081CB" /> },
+  { name: "Node.js", icon: <FaNodeJs color="#339933" /> },
+  { name: "MongoDB", icon: <SiMongodb color="#47A248" /> },
+  { name: "HTML5", icon: <FaHtml5 color="#E34F26" /> },
+  { name: "CSS3", icon: <FaCss3Alt color="#1572B6" /> },
+  { name: "Git", icon: <FaGitAlt color="#F05032" /> },
+  { name: "Figma", icon: <FaFigma color="#F24E1E" /> },
+];
 
 const Visual: React.FC = () => {
   const classes = useStyles();
-  const [clickedImg, setClickedImg] = useState<string | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleClick = (item: { image: string }, index: number) => {
-    setCurrentIndex(index);
-    setClickedImg(item.image);
-  };
-
-  const handleRotationRight = () => {
-    const totalLenght = DATA.length;
-    if (currentIndex + 1 >= totalLenght) {
-      setCurrentIndex(0);
-      const newUrl = DATA[0].image;
-      setClickedImg(newUrl);
-      return;
-    }
-    const newIndex = currentIndex + 1;
-    const newUrl = DATA.filter((item) => {
-      return DATA.indexOf(item) === newIndex;
-    });
-    const newItem = newUrl[0].image;
-    setClickedImg(newItem);
-    setCurrentIndex(newIndex);
-  };
-
-  const handelRotationLeft = () => {
-    const totalLenght = DATA.length;
-    if (currentIndex === 0) {
-      setCurrentIndex(totalLenght - 1);
-      const newUrl = DATA[totalLenght - 1].image;
-      setClickedImg(newUrl);
-    }
-    const newIndex = currentIndex - 1;
-    const newUrl = DATA.filter((item) => {
-      return DATA.indexOf(item) === newIndex;
-    });
-    const newItem = newUrl[0].image;
-    setClickedImg(newItem);
-    setCurrentIndex(newIndex);
-  };
 
   return (
     <Box className={classes.root}>
       <Typography variant="h4" className={classes.header}>
-        Visual Explorations
+        My Tech Stack
       </Typography>
-      <Stack direction="row" className={classes.wrapper}>
-        {DATA.map((item, index) => {
-          return (
-            <div key={index}>
-              <img
-                src={item.image}
-                className={classes.visual}
-                onClick={() => handleClick(item, index)}
-              />  
-            </div>
-          );
-        })}
-      </Stack>
-      {clickedImg && (
-        <Model
-          clickedImg={clickedImg}
-          handelRotationLeft={handelRotationLeft}
-          setClickedImg={setClickedImg}
-          handleRotationRight={handleRotationRight}
-        />
-      )}
+      <div className={classes.grid}>
+        {SKILLS.map((skill, index) => (
+          <Paper key={index} className={classes.card} elevation={0}>
+            <div className={classes.iconWrapper}>{skill.icon}</div>
+            <Typography className={classes.skillName}>{skill.name}</Typography>
+          </Paper>
+        ))}
+      </div>
     </Box>
   );
 };
@@ -81,6 +44,9 @@ const useStyles = makeStyles((theme: Theme) => ({
   root: {
     width: "100%",
     marginTop: "9rem",
+    padding: "0 2rem",
+    maxWidth: "1280px",
+    margin: "0 auto",
   },
   header: {
     color: "#DEDEDE",
@@ -90,37 +56,56 @@ const useStyles = makeStyles((theme: Theme) => ({
     fontWeight: 700,
     lineHeight: "normal",
     letterSpacing: "-0.5px",
+    marginBottom: "4rem",
     [theme.breakpoints.down("sm")]: {
-      fontSize: "24px",
+      fontSize: "28px",
+      marginBottom: "2rem",
     },
   },
-  wrapper: {
-    display: "flex",
-    flexWrap: "wrap",
-    gap: "1rem",
+  grid: {
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))",
+    gap: "2rem",
     justifyContent: "center",
-    marginTop: "3rem",
-    padding: "1rem",
-  },
-  visual: {
-    width: "400px",
-    height: "408px",
-    borderRadius: "4px",
-    cursor: "pointer",
-    boxShadow: "0px 2px 6px rgba(0, 0, 0, 0.1)", 
-    transition: "transform 0.3s ease",
-    "&:hover": {
-      boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
-      transform: "scale(1.05)",
-    },
-    [theme.breakpoints.down("md")]: {
-      width: "300px",
-      height: "308px",
-    },
     [theme.breakpoints.down("sm")]: {
-      width: "100%", 
-      height: "auto", 
+        gridTemplateColumns: "repeat(2, 1fr)",
+        gap: "1rem",
+    }
+  },
+  card: {
+    backgroundColor: "#2A2A2A !important",
+    borderRadius: "16px !important",
+    padding: "2rem 1rem",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "1rem",
+    cursor: "pointer",
+    transition: "all 0.3s ease",
+    border: "1px solid rgba(255,255,255,0.05)",
+    "&:hover": {
+      transform: "translateY(-5px)",
+      backgroundColor: "#333333 !important",
+      border: "1px solid rgba(255,255,255,0.2)",
+      boxShadow: "0 10px 30px rgba(0,0,0,0.3)",
+      "& $iconWrapper": {
+        transform: "scale(1.1)",
+      },
     },
+  },
+  iconWrapper: {
+    fontSize: "3rem",
+    transition: "transform 0.3s ease",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  skillName: {
+    color: "#DEDEDE",
+    fontFamily: "Manrope !important",
+    fontWeight: "600 !important",
+    fontSize: "1rem !important",
   },
 }));
 

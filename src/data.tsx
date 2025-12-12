@@ -1,6 +1,6 @@
 /* eslint-disable react-refresh/only-export-components */
 import { travel, visual1, visual2, visual3 } from "./assets/img";
-import { comfy, lend, project3, temi2, shopify } from "./assets/img";
+import { comfy, lend, temi2, shopify, dashboardPage, ican } from "./assets/img";
 
 
 export const DATA = [
@@ -31,6 +31,26 @@ export const DATA = [
 ];
 
 export const PROJECTS = [
+    {
+    title:"Belrald",
+    image: dashboardPage,
+    description: "This is a laboratory management system",
+    stacks: "React, TypeScript, React query, tailwind",
+    buttonText:"Live",
+    buttonText2:"Source",
+    buttonLink:"https://lis.dev.belrald.com",
+    buttonLink2:"https://github.com/Belraldlis/main-dashboard",
+  },
+  {
+    title:"ICAN Online Tutors",
+    image:ican,
+    description: "Do you want to pass your Professional exams at 1st attempt? Join our community of aspiring qualified accounting professionals and learn how to smash your exams at a go!",
+    stacks: "React Js, Local Storage, Prime React, Prime Icons",
+    buttonText:"Live",
+    buttonText2:"Source",
+    buttonLink:"https://icanonlinetutors.com",
+    buttonLink2:"https://github.com/Debuggers-Studio-Pro/ican-online-tutors-front-end",
+  },
   {
     title:"Portfolio",
     image:temi2,
@@ -80,15 +100,5 @@ export const PROJECTS = [
     buttonText2:"Source",
     buttonLink:"https://temitope-faluta-lendsqr-fe-test.netlify.app/",
     buttonLink2:"https://github.com/lasbohoo/lendsqr-fe-test",
-  },
-  {
-    title:"Clothing",
-    image:project3,
-    description: "To create the contact form, in the contact form component you have to open the ContactForm.",
-    stacks: "React, TypeScript, Material UI",
-    buttonText:"Live",
-    buttonText2:"Source",
-    buttonLink:"Live",
-    buttonLink2:"Repo",
   },
 ]

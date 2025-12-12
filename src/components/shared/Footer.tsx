@@ -5,7 +5,7 @@ import { FaTwitter, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { NavHashLink } from "react-router-hash-link";
 
 const SOCIAL = [
-  { icon: <FaTwitter />, to:"https://twitter.com/Faluta5", color: "#DEDEDE",} ,
+  { icon: <FaTwitter />, to:"https://x.com/temitope_faluta?s=21", color: "#DEDEDE",} ,
   { icon: <FaLinkedin />, to:"/https://www.linkedin.com/in/temitope-faluta-255527166/", color: "#DEDEDE",},
   { icon: <FaWhatsapp />, to:"https://wa.link/2lqmjq", color: "#DEDEDE",},
 ];
