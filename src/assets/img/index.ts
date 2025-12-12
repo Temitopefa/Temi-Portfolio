@@ -20,7 +20,6 @@ import lend from "./lend.png";
 import shopify from "./shopify.jpg";
 import travel from "./travel.jpg";
 import comfy from "./comfy.jpg";
-import resume from "./temitopeFaluta.pdf";
 import dashboardPage from "./dashboardPage.png";
 import ican from "./iotPage.png";
 import loginPage from "./Login page.png";
@@ -44,7 +43,6 @@ export {
   whatsapp,
   linkedin,
   twitter,
-  resume,
   temi2,
   lend,
   travel,

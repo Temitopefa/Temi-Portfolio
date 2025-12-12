@@ -17,7 +17,6 @@ import { makeStyles, useTheme } from "@mui/styles";
 import { NavHashLink } from "react-router-hash-link";
 import CloseIcon from "@mui/icons-material/Close";
 import MenuIcon from "@mui/icons-material/Menu";
-import { resume } from "../../assets/img";
 
 import { FaGithub, FaTwitter, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
@@ -30,7 +29,7 @@ const LINKS = [
 
 const SOCIAL = [
   { icon: <FaGithub />, to:"https://github.com/Temitopefa"},
-  { icon: <FaTwitter />, to:"https://x.com/temitope_faluta?s=21"},
+  { icon: <FaTwitter />, to:"https://twitter.com/Faluta5"},
   { icon: <FaLinkedin />, to:"/https://www.linkedin.com/in/temitope-faluta-255527166/"},
   { icon: <FaWhatsapp />, to:"https://wa.link/2lqmjq"},
 ];
@@ -72,7 +71,7 @@ const Navbar:React.FC = () => {
             <Typography variant="h6" className={classes.navLogo}>
               Temy T
             </Typography>
-            <a href={resume} download="Temitope Faluta Resume">
+            <a href="/temitopeFaluta.pdf" download="Temitope Faluta Resume.pdf">
               <button className={classes.fadeIn}>
                 My Resume
               </button>
